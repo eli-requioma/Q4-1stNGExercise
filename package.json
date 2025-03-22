@@ -1,10 +1,11 @@
 {
   "name": "nodejs",
   "version": "1.0.0",
-  "description": "",
+  "description": "![](banner.png)",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "keywords": [],
   "author": "",
@@ -14,5 +15,14 @@
     "body-parser": "^1.20.2",
     "express": "^4.19.2",
     "hbs": "^4.2.0"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eli-requioma/Q4-1stNGExercise.git"
+  },
+  "bugs": {
+    "url": "https://github.com/eli-requioma/Q4-1stNGExercise/issues"
+  },
+  "homepage": "https://github.com/eli-requioma/Q4-1stNGExercise#readme"
 }

@@ -5,14 +5,14 @@
     <meta charset="utf-8">
     <!-- place your own content on the meta below -->
     <meta name="viewport" content="width=device-width">
-    <meta name="author" content="">
-    <meta name="description" content="">
-    <meta name="keywords" content="">
-    <title</title>
+    <meta name="author" content="REQUIOMA, Elizabeth Simone M.">
+    <meta name="description" content="A simple triangle drawing site">
+    <meta name="keywords" content="triangle, hypotenuse, legs">
+    <title>REQUIOMA Q4NG1</title>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <script src="https://www.w3schools.com/lib/w3.js"></script>
     <link href="./style.css" rel="stylesheet" type="text/css" />
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/x-icon" href="./lizfavicon.ico">
 </head>
 
 <body>
@@ -24,43 +24,47 @@
 
     <!-- Start Content -->
     <div id="home" class="w3-container w3-content w3-padding-64">
-        <h2>Square with Side {{sideLength}} </h2>
+        <h2 id="message">Right Triangle with Legs of Length {{Leg1}} and {{Leg2}}</h2>
         <canvas class=" w3-white" id="mycanvas" width="100" height="100"> 
           <!-- do not remove, this defines the drawing area/canvas with size of 100 by 100 -->
         </canvas>
     </div>
-    <footer class="w3-padding-large"> &copy; 2024 Sir Roy</footer>
+    <footer class="w3-padding-large"> &copy; 2025 Requioma</footer>
 
     <script>
 
-        function drawSquare() {
 
-            // sample use of handlbars 
-            const s = {{sideLength}};
+        function drawTriangle() {
+
+            const t1 = {{Leg1}};
+            const t2 = {{Leg2}};
+            let pythagorean = t1*t1 + t2*t2;
+            let h = Math.sqrt(pythagorean);
 
             let canvas = document.getElementById("mycanvas");
-            canvas.width = (s + 50);
-            canvas.height = (s + 50);
-            console.log(s)
+            canvas.height = (t1 + 50);
+            canvas.width = (t2 + 50);
+            console.log(t1,t2)
 
             var ctx = canvas.getContext("2d");
-            const o = 20; //offset to have space surroundig the square
+            const o = 20; //offset to have space surrounding the triangle
             // moving to the starting point
             ctx.moveTo(o, o);
-            ctx.lineTo(o, o + s);
-            ctx.lineTo(o + s, o + s)
-            ctx.lineTo(o + s, o);
+            ctx.lineTo(o, o + t1);
+            ctx.lineTo(o + t2, o + t1)
             ctx.lineTo(o, o);
 
             // for placing text
-            ctx.fillText(s, o + (s / 2), o + s)
-            ctx.fillText(s, o + 0, o + s / 2) 
+            ctx.fillText(t1, o + 0, o + t1 / 2) 
+            ctx.fillText(t2, o + (t2 / 2), o + t1)
+            ctx.fillText(h, o + (t2 / 2), o + t1 / 2)
             
             // to actually display the triangle
             ctx.stroke();
         }
 
-        drawSquare(); // call the call function
+        drawTriangle();
+        
     </script>
 
 

@@ -1,40 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width">
-  <meta name="author" content="">
-  <meta name="description" content="">
-  <meta name="keywords" content="">
-  <title</title>
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <meta name="author" content="REQUIOMA, Elizabeth Simone M.">
+  <meta name="description" content="A simple triangle drawing site">
+  <meta name="keywords" content="triangle, hypotenuse, legs">
+  <title>REQUIOMA Q4NG1</title>
+  <link rel="icon" href="./lizfavicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link rel="stylesheet" href="style.css">
   <script src="https://www.w3schools.com/lib/w3.js"></script>
+</head>
 
 <body>
-
 
 
   <!-- Navigation (Stays on Top) -->
   <div class="w3-top w3-bar w3-black">
     <a href="/" class="w3-bar-item w3-button">Input</a>
-    <a href="/draw" class="w3-bar-item w3-button">Draw</a>
+    <a href="/views/draw.hbs" class="w3-bar-item w3-button">Draw</a>
   </div>
 
   <!-- Start Content -->
   <div id="home" class="w3-container w3-padding-64">
 
-    <form action="/draw" method="GET">
-      <label for="sideLength">Enter the side length:</label>
-      <input type="number" id="sideLength" name="sideLength" required>
-
+    <form action="/draw" method="post">
+      <label for="Leg1">Enter the length of leg 1:</label>
+      <input type="number" id="Leg1" name="Leg1" required>
       <br>
-      <button type="submit">Draw Square</button>
+      <label for="Leg2">Enter the length of leg 2:</label>
+      <input type="number" id="Leg2" name="Leg2" required>
+      <br>
+      <button type="submit">Draw Right Triangle</button>
     </form>
 
   </div>
 
-<footer  class=" w3-padding-large"> &copy; 2024 Sir Roy</footer>
+<footer  class=" w3-padding-large"> &copy; 2025 Requioma</footer>
 
 </body>
 

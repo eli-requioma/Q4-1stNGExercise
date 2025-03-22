@@ -10,7 +10,7 @@ const path = require("path");
 const app = express();
 const port = 3000;
 
-//Serves static files (we need it to import a css file)
+//import files under public
 app.use(express.static(path.join(__dirname, "public")));
 app.set("view engine", "hbs");
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -20,6 +20,11 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // Render the initial page with the number input form
 app.get("/", (req, res) => {
   res.render("index");
+});
+
+app.post("/draw", (req, res) => {
+  const { Leg1, Leg2 } = req.body;
+  res.render("draw", {Leg1, Leg2});
 });
 
 // Create express route binder for draw.hbs and get the data from the url as parameters
